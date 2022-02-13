@@ -1,0 +1,30 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+    "manifest_version": 2,
+
+    "name": "CoinList sosat'",
+    "description": "CoinList sosat'",
+    "version": "0.0.0.2",
+
+    "browser_action": {
+        "default_icon": "icon.jpg",
+		"icons": { "16": "icon.jpg",
+       "48": "icon.jpg",
+      "128": "icon.jpg" },
+        "default_title": "CoinList sosat'"
+    },
+    
+    "permissions": [
+        "<all_urls>"
+    ],
+
+    "content_scripts": [
+        {
+            "matches": ["https://sales.coinlist.co/galaxy-token-sale/*"],
+            "js": ["bot.js"],
+            "all_frames": true,
+            "run_at": "document_end"
+        }
+    ]
+}
